@@ -65,7 +65,7 @@ soc-challenges/
 
 ### 🔍 Methodology
 
-Every question was answered using **tshark** — the CLI version of Wireshark — on Kali Linux.  
+Every question was answered using **tshark** — the CLI version of Wireshark on Kali Linux.  
 No GUI. Just the terminal, precise filters, and piped commands.
 
 The approach for each question followed this structure:
