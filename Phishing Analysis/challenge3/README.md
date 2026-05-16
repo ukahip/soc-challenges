@@ -449,5 +449,9 @@ The save path is in the second argument of `URLDownloadToFile`. The filename fol
 
 ---
 
-*Report prepared by: SOC Analyst | Global Logistics | Phishing Analysis Challenge 3*  
+## 🔗 Connect
+- **LinkedIn:** [Paul Jadefox](https://linkedin.com/in/paul-ukah)
+- **AltSchool Africa:** Cloud Security Track — SOC101
+- **MalwareCube:** SOC101 Challenge Platform
+
 *Tools: Kali Linux · Sublime Text · emldump.py · sha256sum · oledump.py · VirusTotal · CyberChef*
