@@ -41,7 +41,6 @@ soc-challenges/
 | # | Category | Challenge | Platform | Status |
 |---|---|---|---|---|
 | 01 | Network Security | [Wireshark Challenge 1](#-wireshark-challenge-1--malwarecube-soc101) | MalwareCube SOC101 | ✅ Complete |
-| 02 | Email & Phishing Analysis | Coming soon | — | 🔄 In Progress |
 
 ---
 
