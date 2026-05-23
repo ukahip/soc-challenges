@@ -340,7 +340,7 @@ Return-Path: bounce@bulletproof-hosting.net
 ```
 
 **In This Investigation:**
-If Q6 differs from Q5's domain, it indicates the attacker deliberately uses separate infrastructure for bounces — classic phishing behavior. Legitimate companies maintain consistent domains.
+If Q6 differs from Q5's domain, it indicates the attacker deliberately uses separate infrastructure for bounces classic phishing behavior. Legitimate companies maintain consistent domains.
 
 ![Screenshot Q6: Sublime Text showing Return-Path: header and bounce address](./screenshots/q6.jpg)
 
