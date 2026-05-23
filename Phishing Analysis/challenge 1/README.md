@@ -1,6 +1,7 @@
 # 🛡️ Phishing Email Analysis — Challenge 1
 
-**SOC Analyst Lab | Mighty Solutions, Inc.**  
+**SOC Analyst Lab | Mighty Solutions, Inc.** 
+**SOC Lab: https://challenges.malwarecube.com/#/c/074e4448-e8d7-4122-86f2-36a4d7b2a18b** 
 **Investigation Environment: Sublime Text on Kali Linux (VMware)**
 
 > **Scenario:** Account Executive Dana Derringer forwarded a suspicious email to the security team's phishing mailbox. She received a warning claiming her online access had been disabled — yet she could still access all her platforms normally. As a SOC Analyst, investigate the `challenge1.eml` file using Sublime Text on Kali Linux with detailed answer explanations.
