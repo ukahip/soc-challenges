@@ -2,7 +2,7 @@
 
 **SOC Analyst Lab | Mighty Solutions, Inc.** 
 
-**SOC Lab: https://challenges.malwarecube.com/#/c/074e4448-e8d7-4122-86f2-36a4d7b2a18b** 
+**SOC Lab: [SOC 101 — MalwareCube Challenges] https://challenges.malwarecube.com/#/c/074e4448-e8d7-4122-86f2-36a4d7b2a18b** 
 
 **Investigation Environment: Sublime Text on Kali Linux (VMware)**
 
