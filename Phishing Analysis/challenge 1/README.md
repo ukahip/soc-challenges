@@ -6,7 +6,9 @@
 
 **Investigation Environment: Sublime Text on Kali Linux (VMware)**
 
-> **Scenario:** Account Executive Dana Derringer forwarded a suspicious email to the security team's phishing mailbox. She received a warning claiming her online access had been disabled — yet she could still access all her platforms normally. As a SOC Analyst, investigate the `challenge1.eml` file using Sublime Text on Kali Linux with detailed answer explanations.
+> **Scenario:** Account Executive Dana Derringer forwarded a suspicious email to the security team's phishing mailbox. 
+
+**She received a warning claiming her online access had been disabled — yet she could still access all her platforms normally. As a SOC Analyst, investigate the `challenge1.eml` file using Sublime Text on Kali Linux with detailed answer explanations.**
 
 ---
 
