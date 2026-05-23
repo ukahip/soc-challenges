@@ -7,7 +7,7 @@
 
 ## 👤 About
 
-**Analyst:** Paul (Jadefox) — `ukahip`  
+**Analyst:** Paul Ukah — `ukahip`  
 **Track:** Cloud Security — AltSchool Africa  
 **Focus:** Blue Team | Network Forensics | Threat Analysis | Incident Response  
 **Primary Platform:** Kali Linux
