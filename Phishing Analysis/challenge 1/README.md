@@ -931,7 +931,7 @@ phishing_analysis_challenge1/
 
 ---
 
-> **Author:** [Ukah Paul]  
-> **Date:** [May 22nd 2026]  
+> **Author:** **Ukah Paul**
+> **Date:** **May 22nd 2026** 
 > **Environment:** Kali Linux on VMware | Sublime Text  
 > **Classification:** Phishing — Credential Harvesting Attack
