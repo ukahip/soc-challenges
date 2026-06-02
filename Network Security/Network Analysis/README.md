@@ -57,8 +57,7 @@ tshark -r tcpdump_challenge.pcap | wc -l
 
 **Screenshot — Q1:**
 
-> ![Q1 — Total packet count](q1.jpg)
-> *Insert terminal screenshot showing packet count output here*
+> ![Q1 — Total packet count](screenshot/q1.jpg)
 
 | Answer | **1344 packets** |
 |---|---|
@@ -85,8 +84,7 @@ tcpdump -r tcpdump_challenge.pcap icmp | wc -l
 
 **Screenshot — Q2:**
 
-> ![Q2 — ICMP packet count](screenshot\q2.jpg)
-> *Insert terminal screenshot showing ICMP filter output here*
+> ![Q2 — ICMP packet count](screenshot/q2.jpg)
 
 | Answer | **132 ICMP packets** |
 |---|---|
@@ -113,8 +111,7 @@ whois 172.67.72.15 | grep -iE 'originas|aut-num|^origin'
 
 **Screenshot — Q3:**
 
-> ![Q3 — ASN lookup](screenshot\q3.jpg)
-> *Insert terminal screenshot showing IP extraction and ASN lookup here*
+> ![Q3 — ASN lookup](screenshot/q3.jpg)
 
 | Destination IP | **172.67.72.15 (Cloudflare)** |
 |---|---|
@@ -141,8 +138,7 @@ tshark -r tcpdump_challenge.pcap -Y "http.request.method == POST" \
 
 **Screenshot — Q4:**
 
-> ![Q4 — HTTP POST count](screenshot\q4.jpg)
-> *Insert terminal screenshot showing POST request filter output here*
+> ![Q4 — HTTP POST count](screenshot/q4.jpg)
 
 | Answer | **1 HTTP POST request** |
 |---|---|
@@ -174,8 +170,7 @@ tcpdump -r tcpdump_challenge.pcap -A 'tcp port 80' | grep -iE "password|passwd|p
 
 **Screenshot — Q5:**
 
-> ![Q5 — Password extraction](screenshot\q5.jpg)
-> *Insert terminal screenshot showing decoded HTTP POST body here*
+> ![Q5 — Password extraction](screenshot/q5.jpg)
 
 | Answer (password) | **ilovecats9102** |
 |---|---|
@@ -201,8 +196,7 @@ tshark -r tcpdump_challenge.pcap -q -z io,phs
 
 **Screenshot — Q6:**
 
-> ![Q6 — Port frequency ranking](screenshot\q6.jpg)
-> *Insert terminal screenshot showing port frequency output here*
+> ![Q6 — Port frequency ranking](screenshot/q6.jpg)
 
 | Answer | **Port 21 (FTP — File Transfer Protocol)** |
 |---|---|
@@ -240,13 +234,11 @@ tshark -r tcpdump_challenge.pcap -Y "ftp.response.code" \
 
 **Screenshot 7a — FTP credential extraction (USER / PASS commands):**
 
-> ![Q7a — FTP credentials](screenshot\q7a.jpg)
-> *Insert terminal screenshot showing USER and PASS commands in FTP stream here*
+> ![Q7a — FTP credentials](screenshot/q7a.jpg)
 
 **Screenshot 7b — FTP server response (230 Login successful):**
 
-> ![Q7b — FTP login confirmation]
->(screenshot\q7b.jpg)
+> ![Q7b — FTP login confirmation](screenshot/q7b.jpg)
 
 | Answer (credentials) | **demo:password** |
 |---|---|
@@ -279,8 +271,7 @@ tcpdump -r tcpdump_challenge.pcap -A 'port 21' | grep "RETR"
 
 **Screenshot — Q8:**
 
-> ![Q8 — FTP RETR filename](screenshot\q8.jpg)
-> *Insert terminal screenshot showing RETR command output here*
+> ![Q8 — FTP RETR filename](screenshot/q8.jpg)
 
 | Answer (filename) | **readme.txt** |
 |---|---|
@@ -314,8 +305,7 @@ tshark -r tcpdump_challenge.pcap -Y "http" \
 
 **Screenshot — Q9:**
 
-> ![Q9 — Malicious User-Agent string](screenshot\q9.jpg)
-> *Insert terminal screenshot showing User-Agent extraction output here*
+> ![Q9 — Malicious User-Agent string](screenshot/q9.jpg)
 
 | Answer (malware) | **Agent Tesla (LummaC2 Stealer)** |
 |---|---|
@@ -359,8 +349,7 @@ echo "http://t.me/+zz0192lskaaa" | sed 's#http#hxxp#; s#\.#[.]#g; s#://#[://]#'
 
 **Screenshot — Q10:**
 
-> ![Q10 — Defanged C2 URL](screenshot\q10.jpg)
-> *Insert terminal screenshot showing URL extraction and defanging pipeline output here*
+> ![Q10 — Defanged C2 URL](screenshot/q10.jpg)
 
 | Field | Detail |
 |---|---|
@@ -420,5 +409,3 @@ Based on the packet capture evidence, the following attack sequence was reconstr
 | **T1041** | Exfil Over C2 Channel | POST body with stolen credentials sent to C2 |
 
 ---
-
-*tcpdump_challenge.pcap | Kali Linux | tshark / tcpdump / xxd / sed / awk*
