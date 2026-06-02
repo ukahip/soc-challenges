@@ -245,8 +245,8 @@ tshark -r tcpdump_challenge.pcap -Y "ftp.response.code" \
 
 **Screenshot 7b — FTP server response (230 Login successful):**
 
-> ![Q7b — FTP login confirmation](screenshot\q7b.jpg)
-> *Insert terminal screenshot showing 230 Login successful server response here*
+> ![Q7b — FTP login confirmation]
+>(screenshot\q7b.jpg)
 
 | Answer (credentials) | **demo:password** |
 |---|---|
