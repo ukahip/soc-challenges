@@ -371,7 +371,7 @@ echo "http://t.me/+zz0192lskaaa" | sed 's#http#hxxp#; s#\.#[.]#g; s#://#[://]#'
 |---|---|---|
 | **1** | Total packets in pcap | **1344** |
 | **2** | Total ICMP packets | **132** |
-| **3** | ASN of pinged destination IP | **AS13335 (Cloudflare: 172.67.72.15)** |
+| **3** | ASN of pinged destination IP | **AS13335 (Cloudflare 172.67.72.15)** |
 | **4** | HTTP POST requests made | **1** |
 | **5** | Password found in HTTP payload | **ilovecats9102** |
 | **6** | Second most frequent well-known port | **Port 21 (FTP)** |
