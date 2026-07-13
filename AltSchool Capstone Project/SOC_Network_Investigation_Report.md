@@ -46,7 +46,7 @@ The PCAP capture spans 182 frames (53,464 bytes). FTP dominates — 42 control f
 | 172.67.74.152 | api.ipify.org (Cloudflare) | 19 | Victim public IP lookup — HTTPS; first contact post-execution |
 
 **[Screenshot: IP Conversation Results]**
-![IP Conversation Results](screenshots/Identify%20All%20Hosts%20%28IP%20Conversation%20Table%29.jpg)
+![IP Conversation Results](screenshots/Identify All Hosts \(IP Conversation Table\).jpg)
 > Source: `screenshots/Identify All Hosts (IP Conversation Table)`
 
 
@@ -99,7 +99,7 @@ The PCAP capture spans 182 frames (53,464 bytes). FTP dominates — 42 control f
 | **ftp.ercolina-usa.com** | **192.254.225.136** | **Attacker-controlled FTP server — receives all stolen data** |
 
 **[Screenshot: DNS Response Extraction]**
-![DNS Response Extraction](screenshots/Extract%20DNS%20Responses%20%28Domain%20%E2%86%92%20IP%20Resolution%29.jpg)
+![DNS Response Extraction](screenshots/Extract DNS Responses \(Domain → IP Resolution\).jpg)
 > Source: `screenshots/Extract DNS Responses (Domain → IP Resolution)`
 
 
