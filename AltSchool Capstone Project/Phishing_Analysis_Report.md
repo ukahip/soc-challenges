@@ -72,53 +72,12 @@ On 4 December 2024, a staff member at Globex Manufacturing Ltd. received a targe
 ![Email Header](screenshots/email header.jpg)
 > Source: `screenshots/email header`
 
-```
-1  Return-Path: <sertan@acronas.com.tr>
-2  Delivered-To: [recipient's email address]
-3  Authentication-Results: [recipient's email server]; dkim=none; dmarc=none; spf=softfail ([recipient's email server]: 94.141.120.32 is
-   neither permitted nor denied by domain of sertan@acronas.com.tr) smtp.mailfrom=sertan@acronas.com.tr
-4  Received: from [94.141.120.32] (unknown [94.141.120.32])
-5      by [recipient's email server] (Postfix) with ESMTP id [information removed]
-6      for <[recipient's email address]>; Wed, 04 Dec 2024 12:51:16 +0000 (UTC)
-7  From: =?UTF-8?B?U2VydGFuIMOHT0tFUg==?= <sertan@acronas.com.tr>
-8  To: [recipient's email address]
-9  Subject: PURCHASE QUOTATION
-10 Date: 4 Dec 2024 04:51:17 -0800
-11 Message-ID: <20241204045117.4A43A7B93A5F2488@acronas.com.tr>
-12 MIME-Version: 1.0
-13 Content-Type: multipart/mixed;
-14     boundary="----=_NextPart_000_0012_34AB1E64.CFC22211"
-15
-16 This is a multi-part message in MIME format.
-17
-18 ------=_NextPart_000_0012_34AB1E64.CFC22211
-19 Content-Type: text/html;
-20 Content-Transfer-Encoding: quoted-printable
-```
 
 **[Screenshot: Email Header Analysis — MX Toolbox (SPF/DKIM/DMARC/Relay Chain Results)]**
 ![Header analysis with mxtoolbox a](screenshots/heaader analysis with mxtoolboxa.jpg)
 ![Header analysis with mxtoolbox b](screenshots/heaader analysis with mxtoolboxb.jpg)
 > Source: `screenshots/heaader analysis with mxtoolboxa` and `...mxtoolboxb`
 
-```
-dmarc:acronas.com.tr
-  DMARC Record Published — No DMARC Record found
-
-spf:acronas.com.tr:94.141.120.32
-  SPF Record Published — No SPF Record found
-
-Session Transcript:
-  - - - txt:acronas.com.tr
-  1 ns44.ns.tr 105.7.0.5 AUTH 140 ms Received 1 Referrals, rcode=NAME_ERROR
-    com.tr. 3600 IN SOA mname=ns73.ns.tr rname=hostmaster.trabis.gov.tr serial=1770876030
-  - WebServer [spf:acronas.com.tr:94.141.120.32] 281ms
-
-Relay Information
-Received Delay: 0 seconds
-Hop | Delay | From                  | By    | With  | Time (UTC)         | Blacklist
-1   | *     | unknown 94.141.120.32 | email | ESMTP | 12/4/2024 12:51:16 PM | ✗
-```
 
 ### 2.3 Originating IP Intelligence — WHOIS Analysis (94.141.120.32)
 
@@ -164,74 +123,6 @@ WHOIS data was retrieved from the RIPE NCC database for originating IP 94.141.12
 ![Whois output 2](screenshots/whois output 2.jpg)
 > Source: `screenshots/whois output 1` and `.../whois output 2`
 
-```
-─(paul㉿kali)-[~/SOC/Capstone Project/AgentTesla]
-└─$ whois 94.141.120.32
-% This is the RIPE Database query service.
-% The objects are in RPSL format.
-%
-% The RIPE Database is subject to Terms and Conditions.
-% See https://docs.db.ripe.net/terms-conditions.html
-
-% Information related to '94.141.120.0 - 94.141.120.255'
-% Abuse contact for '94.141.120.0 - 94.141.120.255' is 'abuse@dgtl.tech'
-
-inetnum:        94.141.120.0 - 94.141.120.255
-netname:        DGTL-NETWORK-2024-12-11
-org:            ORG-DTUL2-RIPE
-country:        GB
-admin-c:        DGTL6-RIPE
-tech-c:         DGTL6-RIPE
-status:         ASSIGNED PA
-mnt-by:         MNT-DGTL
-created:        2024-07-07T17:19:54Z
-last-modified:  2026-04-06T13:13:36Z
-source:         RIPE
-
-organisation:   ORG-DTUL2-RIPE
-org-name:       DGTL TECH UK LLP
-org-type:       LIR
-address:        71-75 Shelton Street
-address:        WC2H 9JQ
-address:        London
-address:        UNITED KINGDOM
-country:        GB
-reg-nr:         OC434843
-phone:          +442038079477
-remarks:        Website: https://dgtl.tech/
-admin-c:        DGTL6-RIPE
-tech-c:         DGTL6-RIPE
-abuse-c:        AR63612-RIPE
-mnt-ref:        TNM-MNT
-mnt-ref:        MNT-DGTL
-mnt-by:         RIPE-NCC-HM-MNT
-mnt-by:         MNT-DGTL
-created:        2021-01-20T10:18:39Z
-last-modified:  2026-05-13T07:27:49Z
-source:         RIPE # Filtered
-
-role:           DGTL LIR GROUP
-address:        71-75 Shelton Street
-address:        WC2H 9JQ
-address:        London
-address:        UNITED KINGDOM
-nic-hdl:        DGTL6-RIPE
-phone:          +44 20 3807 9477
-mnt-by:         MNT-DGTL
-created:        2020-02-06T20:02:30Z
-last-modified:  2022-04-05T12:46:16Z
-source:         RIPE # Filtered
-
-% Information related to '94.141.120.0/24AS61087'
-route:          94.141.120.0/24
-origin:         AS61087
-mnt-by:         MNT-DGTL
-created:        2024-12-11T14:22:23Z
-last-modified:  2024-12-11T14:22:23Z
-source:         RIPE
-
-% This query was served by the RIPE Database Query Service version 1.122.1 (DEXTER)
-```
 
 ### 2.4 Email Content Analysis
 
@@ -250,30 +141,11 @@ source:         RIPE
 ![List all mime parts](screenshots/list all mime parts.jpg)
 > Source: `screenshots/list all mime parts`
 
-```
-─(paul㉿kali)-[~/SOC/Capstone Project/AgentTesla]
-└─$ python3 ../Tools/emldump.py 2024-12-04-AgentTesla-variant-malspam-1251-UTC.eml
-1: M               multipart/mixed
-2:        923      text/html
-3:     798831      application/x-tar (TECHNICAL SPECIFICATIONS.TAR)
-```
 
 **[Screenshot: Extracted Email Body Content — Decoded Plain-text Body from emldump.py]**
 ![Extract and Read the Email Body](screenshots/Extract and Read the Email Body.jpg)
 > Source: `screenshots/Extract and Read the Email Body`
 
-```
-─(paul㉿kali)-[~/SOC/Capstone Project/AgentTesla]
-└─$ python3 ../Tools/emldump.py 2024-12-04-AgentTesla-variant-malspam-1251-UTC.eml -s 2 -d
-<!DOCTYPE HTML>
-<html><head><title></title>
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-</head>
-<body style="margin: 0.4em;">
-<p>Dea Sir,</p><p>You are kindly requested to provide your quotation for attached Equipment&nbsp;with payment/delivery term.<br>We plan the purchase&nbsp;the equipment for our current project. We are Turkish company.</p><p>Please see technical specifications in the&nbsp;attached file.</p><p>Best Regards,<br>&nbsp;<br>Sertan &Ccedil;OKER</p><p>Purchase&nbsp;Manager<br><br><strong>Acron Su ve &Ccedil;evre Teknolojileri A.S</strong><br><br>1802 Sokak No:8/C Yenisehir<br>Konak - IZMIR<br>
-Tel :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +90 232 459 87 22<br>Mobil :&nbsp; +90 531 370 71 98 <br>E-mail : <a href="mailto:sertan@acronas.com.tr">sertan@acronas.com.tr</a><br><a href="http://www.acronas.com.tr">www.acronas.com.tr</a> <br></p><p></p><p><br></p>
-</body></html>
-```
 
 ### 2.5 Social Engineering Assessment
 
@@ -306,75 +178,15 @@ The attachment passed through three layers of deception before the executable pa
 ![Extract the Attachment b](screenshots/Extract the Attachmentb.jpg)
 > Source: `screenshots/Extract the Attachmenta` and `.../Extract the Attachmentb`
 
-```
-─(paul㉿kali)-[~/SOC/Capstone Project/AgentTesla]
-└─$ python3 ../Tools/eioc.py 2024-12-04-AgentTesla-variant-malspam-1251-UTC.eml
-Extracted IP Addresses:
-==========================================
-94[.]141[.]120[.]32 - Roubaix, Hauts-de-France, FR, ISP: AS61087 DGTL TECH UK LLP
-
-Extracted URLs:
-==========================================
-http://www[.]acronas[.]com[.]tr
-
-Extracted Headers:
-==========================================
-Return-Path: <sertan@acronas.com.tr>
-Authentication-Results: [recipient's email server]; dkim=none; dmarc=none; spf=softfail ([recipient's email server]: 94.141.120.32 is neither p
-ermitted nor denied by domain of sertan@acronas.com.tr) smtp.mailfrom=sertan@acronas.com.tr
-From: =?UTF-8?B?U2VydGFuIMOHT0tFUg==?= <sertan@acronas.com.tr>
-Subject: PURCHASE QUOTATION
-Date: 4 Dec 2024 04:51:17 -0800
-Message-ID: <20241204045117.4A43A7B93A5F2488@acronas.com.tr>
-
-Extracted Attachments:
-==========================================
-Filename: TECHNICAL SPECIFICATIONS.TAR
-MD5: b7635c9cc63619099419c68a2bf0d390
-SHA1: 98683c9ee69dd591473629d231aacb1020db91b4
-SHA256: 5c98308c69c84a57214442e2cadc9f8f0fcdbab8e6050f9915ac336b6f1d59f0
-```
-
-```
-─(paul㉿kali)-[~/SOC/Capstone Project/AgentTesla]
-└─$ python3 ../Tools/emldump.py 2024-12-04-AgentTesla-variant-malspam-1251-UTC.eml -s 3 -d > TECHNICAL_SPECIFICATIONS.tar
-
-└─$ ls -lh
-total 1.9M
--rw-r--r-- 1 paul paul 1.1M May 18 18:54 2024-12-04-AgentTesla-variant-malspam-1251-UTC.eml
--rw-r--r-- 1 paul paul  56K Dec  5  2024 2024-12-04-AgentTesla-variant-using-FTP.pcap
--rw-rw-r-- 1 paul paul 781K May 27 13:30 TECHNICAL_SPECIFICATIONS.tar
-```
-
 **[Screenshot: True File Type Detection — file Command Output]**
 ![Detect True File Type](screenshots/Detect True File Type.jpg)
 > Source: `screenshots/Detect True File Type`
 
-```
-─(paul㉿kali)-[~/SOC/Capstone Project/AgentTesla]
-└─$ file TECHNICAL_SPECIFICATIONS.tar
-TECHNICAL_SPECIFICATIONS.tar: RAR archive data, v4, os: Win32
-```
 
 **[Screenshot: RAR Archive Contents — unrar l Output]**
 ![List RAR Archive Contents](screenshots/List RAR Archive Contents.jpg)
 > Source: `screenshots/List RAR Archive Contents`
 
-```
-─(paul㉿kali)-[~/SOC/Capstone Project/AgentTesla]
-└─$ unrar l TECHNICAL_SPECIFICATIONS.tar
-
-UNRAR 7.21 freeware      Copyright (c) 1993-2026 Alexander Roshal
-
-Archive: TECHNICAL_SPECIFICATIONS.tar
-Details: RAR 1.5
-
- Attributes      Size     Date    Time   Name
------------ ---------  ---------- -----  ----
-    ..A....   1096704  2024-12-04 00:02  TECHNICAL SPECIFICATIONS.exe
------------ ---------  ---------- -----  ----
-              1096704                    1
-```
 
 ### 3.2 File Properties
 
@@ -402,34 +214,6 @@ Details: RAR 1.5
 ![Extract EXE and Generate Hashes](screenshots/Extract EXE and Generate Hashes.jpg)
 > Source: `screenshots/Extract EXE and Generate Hashes`
 
-```
-─(paul㉿kali)-[~/SOC/Capstone Project/AgentTesla]
-└─$ unrar e TECHNICAL_SPECIFICATIONS.tar "TECHNICAL SPECIFICATIONS.exe" .
-
-UNRAR 7.21 freeware      Copyright (c) 1993-2026 Alexander Roshal
-
-Extracting from TECHNICAL_SPECIFICATIONS.tar
-Extracting  ./TECHNICAL SPECIFICATIONS.exe                          OK
-All OK
-
-└─$ file "TECHNICAL SPECIFICATIONS.exe"
-TECHNICAL SPECIFICATIONS.exe: PE32 executable for MS Windows 4.00 (GUI), Intel i386 Mono/.Net assembly, 3 sections
-
-└─$ echo "MD5 hashes:"
-md5sum TECHNICAL_SPECIFICATIONS.tar "TECHNICAL SPECIFICATIONS.exe"
-
-echo ""
-echo "SHA256 hashes:"
-sha256sum TECHNICAL_SPECIFICATIONS.tar "TECHNICAL SPECIFICATIONS.exe"
-
-MD5 hashes:
-b7635c9cc63619099419c68a2bf0d390  TECHNICAL_SPECIFICATIONS.tar
-65feefe926eb3f734b6968b35c23acb3  TECHNICAL SPECIFICATIONS.exe
-
-SHA256 hashes:
-5c98308c69c84a57214442e2cadc9f8f0fcdbab8e6050f9915ac336b6f1d59f0  TECHNICAL_SPECIFICATIONS.tar
-d1b068b826e3a9527cddd09866886caba895f390af930a9b35c027eb1c2db34c  TECHNICAL SPECIFICATIONS.exe
-```
 
 ### 3.4 Malware Indicators (Static String Analysis: No Execution)
 
@@ -449,37 +233,6 @@ These strings are consistent with a credential harvesting component — either a
 ![Malware Indicators 1a](screenshots/Malware Indicators1a.jpg)
 > Source: `screenshots/Malware Indicators` and `.../Malware Indicators1a`
 
-```
-─(paul㉿kali)-[~/SOC/Capstone Project/AgentTesla]
-└─$ strings "TECHNICAL SPECIFICATIONS.exe" > strings.txt
-
-└─$ cat strings.txt
-!This program cannot be run in DOS mode.
-.text
-.rsrc
-`.reloc
-@.I...
-
-└─$ grep -Ei "user|pass|login|pwd|credential" strings.txt
-
-pbHidePassword
-txtPassword
-pbShowPassword
-txtUsername
-DebuggerNonUserCodeAttribute
-pbHidePassword_Click
-pbShowPassword_Click
-btnLogin_Click
-frmLogin
-btnLogin
-set_PasswordChar
-PiggyBank.frmLogin.resources
-
-└─$ grep -Ei "ConvertHexString|Base64|Decode|Decrypt" strings.txt
-
-<ConvertHexStringToByteArray>b__0
-ConvertHexStringToByteArray
-```
 
 ### 3.5 VirusTotal Hash Reputation Analysis
 

