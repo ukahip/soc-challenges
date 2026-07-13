@@ -80,7 +80,7 @@ On 4 December 2024, a staff member at Globex Manufacturing Ltd. received a targe
 > **THREAT INTELLIGENCE FINDING**
 > The sending IP resolves to a UK-based bulletproof-style hosting provider (DGTL TECH UK LLP) with a subnet created just 7 days after the attack. This is the third geographic mismatch in the evidence chain — the attacker claimed to be Turkish, used a US Pacific Timezone, and sent from UK-hosted infrastructure.
 
-WHOIS data was retrieved from the RIPE NCC database for originating IP 94.141.120.32.
+WHOIS data was retrieved from the RIPE NCC database for the originating IP 94.141.120.32.
 
 | WHOIS Field | Value | SOC Analysis / Significance |
 |---|---|---|
@@ -114,9 +114,12 @@ WHOIS data was retrieved from the RIPE NCC database for originating IP 94.141.12
 | Email timestamp Timezone | Turkish business hours expected (UTC+3) | US Pacific time (-0800 / UTC-8) | YES |
 | Sending IP infrastructure | Turkey or EU expected | UK-hosted via DGTL TECH LLP, London (GB) | YES |
 
-
 **Screenshot:**
+
+
 ![whois output 1](<screenshots/whois output 1.jpg>)
+
+
 
 ![whois output 2](<screenshots/whois output 2.jpg>)
 
