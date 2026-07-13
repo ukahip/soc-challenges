@@ -63,15 +63,17 @@ On 4 December 2024, a staff member at Globex Manufacturing Ltd. received a targe
 | DMARC | none | No enforcement policy — spoofed mail from this domain passes uninspected |
 
 **Screenshot:**
-![Decode the Sender Display Name py](screenshots/Decode the Sender Display Name py.jpg)
-![Decode the Sender Display Name](screenshots/Decode the Sender Display Name.jpg)
+![Decode the Sender Display Name py](<screenshots/Decode the Sender Display Name py.jpg>)
+
+![Decode the Sender Display Name](<screenshots/Decode the Sender Display Name.jpg>)
 
 **Screenshot:**
-![Email Header](screenshots/email header.jpg)
+![Email Header](<screenshots/email header.jpg>)
 
 **Screenshot:**
-![Header analysis with mxtoolbox a](screenshots/heaader analysis with mxtoolboxa.jpg)
-![Header analysis with mxtoolbox b](screenshots/heaader analysis with mxtoolboxb.jpg)
+![Header analysis with mxtoolbox a](<screenshots/heaader analysis with mxtoolboxa.jpg>)
+
+![Header analysis with mxtoolbox b](<screenshots/heaader analysis with mxtoolboxb.jpg>)
 
 ### 2.3 Originating IP Intelligence — WHOIS Analysis (94.141.120.32)
 
@@ -114,7 +116,8 @@ WHOIS data was retrieved from the RIPE NCC database for originating IP 94.141.12
 
 **Screenshot:**
 ![whois output 1](<screenshots/whois output 1.jpg>)
-![whois output 2](screenshots/whois output 2.jpg)
+
+![whois output 2](<screenshots/whois output 2.jpg>)
 
 ### 2.4 Email Content Analysis
 
@@ -161,14 +164,12 @@ The attachment passed through three layers of deception before the executable pa
 | 3 | Unknown binary | PE32 .NET assembly — AgentTesla delivery format | T1027 — Obfuscated Files or Information (packed .NET payload) |
 
 **Screenshot:**
-
 ![Extract the Attachment a](<screenshots/Extract the Attachmenta.jpg>)
 
 
 ![Extract the Attachment b](<screenshots/Extract the Attachmentb.jpg>)
 
 **Screenshot:**
-
 ![Detect True File Type](<screenshots/Detect True File Type.jpg>)
 
 **Screenshot:**
@@ -213,7 +214,6 @@ Static string analysis of the PE binary revealed the following credential-harves
 These strings are consistent with a credential harvesting component — either a fake login form overlay or a browser password vault extractor. Combined with the .NET assembly delivery method, this is consistent with the AgentTesla infostealer family.
 
 **Screenshot:**
-
 ![Malware Indicators](<screenshots/Malware Indicators.jpg>)
 
 ![Malware Indicators 1a](<screenshots/Malware Indicators1a.jpg>)
@@ -226,11 +226,12 @@ These strings are consistent with a credential harvesting component — either a
 | TECHNICAL SPECIFICATIONS.exe | MALICIOUS: Trojan.msil/Strictor | Multiple vendors: confirmed infostealer payload |
 
 **Screenshot:**
-
-![SHA256 Hash Analysis of TAR using Virus Total Trojan Agent Tesla](<screenshots/SHA256 Hash Analysis of TAR using Virus Total Trojan Agent Tesla.jpg>)
+![SHA256 Hash Analysis of TAR using Virus Total Trojan Agent Tesla]
+(<screenshots/SHA256 Hash Analysis of TAR using Virus Total Trojan Agent Tesla.jpg>)
 
 **Screenshot:**
-![SHA256 Hash Analysis on Virus Total on EXE file](<screenshots/SHA256 Hash Analysis on Virus Total on EXE file.jpg>)
+![SHA256 Hash Analysis on Virus Total on EXE file]
+(<screenshots/SHA256 Hash Analysis on Virus Total on EXE file.jpg>)
 
 ---
 
