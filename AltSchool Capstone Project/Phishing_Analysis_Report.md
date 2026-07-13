@@ -114,10 +114,12 @@ WHOIS data was retrieved from the RIPE NCC database for originating IP 94.141.12
 | Email timestamp Timezone | Turkish business hours expected (UTC+3) | US Pacific time (-0800 / UTC-8) | YES |
 | Sending IP infrastructure | Turkey or EU expected | UK-hosted via DGTL TECH LLP, London (GB) | YES |
 
+
 **Screenshot:**
 ![whois output 1](<screenshots/whois output 1.jpg>)
 
 ![whois output 2](<screenshots/whois output 2.jpg>)
+
 
 ### 2.4 Email Content Analysis
 
