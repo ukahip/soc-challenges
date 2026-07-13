@@ -32,7 +32,7 @@ The PCAP capture spans 182 frames (53,464 bytes). FTP dominates — 42 control f
 | FTP Data | 27 | 38,747 | 4 files exfiltrated — ~38 KB of stolen data |
 
 **[Screenshot: Protocol Hierarchy Overview]**
-`![Protocol Hierarchy Overview](screenshots/Protocol Hierarchy Overview.jpg)`
+![Protocol Hierarchy Overview](screenshots/Protocol Hierarchy Overview.jpg)
 > Source: `screenshots/Protocol Hierarchy Overview`
 
 ```
@@ -67,7 +67,7 @@ frame                                    frames:182 bytes:53464
 | 172.67.74.152 | api.ipify.org (Cloudflare) | 19 | Victim public IP lookup — HTTPS; first contact post-execution |
 
 **[Screenshot: IP Conversation Results]**
-`![IP Conversation Results](<screenshots/Identify All Hosts (IP Conversation Table).jpg>)`
+![IP Conversation Results](<screenshots/Identify All Hosts (IP Conversation Table).jpg>)
 > Source: `screenshots/Identify All Hosts (IP Conversation Table)`
 
 ```
@@ -121,7 +121,7 @@ Filter:<No Filter>
 | T+1211.313s | 10.12.4.101 | ftp.ercolina-usa.com | FTP re-resolution — Session 2 beacon (~20 min interval) |
 
 **[Screenshot: DNS Query Extraction]**
-`![DNS Query Extraction](screenshots/Extract DNS Queries.jpg)`
+![DNS Query Extraction](screenshots/Extract DNS Queries.jpg)
 > Source: `screenshots/Extract DNS Queries`
 
 ```
@@ -140,7 +140,7 @@ Filter:<No Filter>
 | **ftp.ercolina-usa.com** | **192.254.225.136** | **Attacker-controlled FTP server — receives all stolen data** |
 
 **[Screenshot: DNS Response Extraction]**
-`![DNS Response Extraction](<screenshots/Extract DNS Responses (Domain → IP Resolution).jpg>)`
+![DNS Response Extraction](<screenshots/Extract DNS Responses (Domain → IP Resolution).jpg>)
 > Source: `screenshots/Extract DNS Responses (Domain → IP Resolution)`
 
 ```
@@ -204,7 +204,7 @@ FTP runs entirely in cleartext. The following control channel exchange was recon
 | T+9.1s | Client → Server | QUIT | FTP Session 1 closed cleanly |
 
 **[Screenshot: FTP Session 1 — Full Command Reconstruction]**
-`![Reconstruct Full FTP Session 1](screenshots/Reconstruct Full FTP Session 1.jpg)`
+![Reconstruct Full FTP Session 1](screenshots/Reconstruct Full FTP Session 1.jpg)
 > Source: `screenshots/Reconstruct Full FTP Session 1`
 
 ```
@@ -251,11 +251,11 @@ Twenty minutes after Session 1, AgentTesla opened a second FTP session to upload
 | T+1212.425s | Server → Client | 226 File successfully transferred | Keylog confirmed on attacker server — Session 2 complete |
 
 **[Screenshot: FTP Session 2 — Keylog Upload]**
-`![Reconstruct Full FTP Session 2](screenshots/Reconstruct Full FTP Session 2.jpg)`
+![Reconstruct Full FTP Session 2](screenshots/Reconstruct Full FTP Session 2.jpg)
 > Source: `screenshots/Reconstruct Full FTP Session 2`
 > (See also combined view below: `Reconstruct Full FTP Sessions full session`)
 
-`![Reconstruct Full FTP Sessions full session](screenshots/Reconstruct Full FTP Sessions full session.jpg)`
+![Reconstruct Full FTP Sessions full session](screenshots/Reconstruct Full FTP Sessions full session.jpg)
 
 ```
 8.6993750  192.254.225.136 10.12.4.101     150  Accepted data connection
@@ -287,12 +287,12 @@ Twenty minutes after Session 1, AgentTesla opened a second FTP session to upload
 | KL_ | KL_gary.strickman-DESKTOP-VJCRXEB_2024_12_04_21_41_04.html | ~1.4 KB | 20 minutes of captured keystrokes — HTML format |
 
 **[Screenshot: Exfiltrated File Recovery]**
-`![Recover Exfiltrated Files from PCAP 1a](screenshots/Recover Exfiltrated Files from PCAP 1a.jpg)`
-`![Recover Exfiltrated Files from PCAP 1b](screenshots/Recover Exfiltrated Files from PCAP 1b.jpg)`
+![Recover Exfiltrated Files from PCAP 1a](screenshots/Recover Exfiltrated Files from PCAP 1a.jpg)
+![Recover Exfiltrated Files from PCAP 1b](screenshots/Recover Exfiltrated Files from PCAP 1b.jpg)
 > Source: `screenshots/Recover Exfiltrated Files from PCAP 1a` and `...1b`
 > Also relevant: `screenshots/exfiltrated files from PCAP`
 
-`![Exfiltrated files from PCAP](screenshots/exfiltrated files from PCAP.jpg)`
+![Exfiltrated files from PCAP](screenshots/exfiltrated files from PCAP.jpg)
 
 ```
 ─(paul㉿kali)-[~/SOC/Capstone Project/AgentTesla/ftp_exports]

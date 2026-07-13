@@ -63,13 +63,13 @@ On 4 December 2024, a staff member at Globex Manufacturing Ltd. received a targe
 | DMARC | none | No enforcement policy — spoofed mail from this domain passes uninspected |
 
 **[Screenshot: Sender display name decode]**
-`![Decode the Sender Display Name py](screenshots/Decode the Sender Display Name py.jpg)`
-`![Decode the Sender Display Name](screenshots/Decode the Sender Display Name.jpg)`
+![Decode the Sender Display Name py](screenshots/Decode the Sender Display Name py.jpg)
+![Decode the Sender Display Name](screenshots/Decode the Sender Display Name.jpg)
 > Source: `screenshots/Decode the Sender Display Name py` and `.../Decode the Sender Display Name`
 > Shows the RFC 2047 Base64 decode of the From display name to "Sertan ÇOKER".
 
 **[Screenshot: Email Overview in Sublime Text — Full Raw .eml Header Block]**
-`![Email Header](screenshots/email header.jpg)`
+![Email Header](screenshots/email header.jpg)
 > Source: `screenshots/email header`
 
 ```
@@ -97,8 +97,8 @@ On 4 December 2024, a staff member at Globex Manufacturing Ltd. received a targe
 ```
 
 **[Screenshot: Email Header Analysis — MX Toolbox (SPF/DKIM/DMARC/Relay Chain Results)]**
-`![Header analysis with mxtoolbox a](screenshots/heaader analysis with mxtoolboxa.jpg)`
-`![Header analysis with mxtoolbox b](screenshots/heaader analysis with mxtoolboxb.jpg)`
+![Header analysis with mxtoolbox a](screenshots/heaader analysis with mxtoolboxa.jpg)
+![Header analysis with mxtoolbox b](screenshots/heaader analysis with mxtoolboxb.jpg)
 > Source: `screenshots/heaader analysis with mxtoolboxa` and `...mxtoolboxb`
 
 ```
@@ -160,8 +160,8 @@ WHOIS data was retrieved from the RIPE NCC database for originating IP 94.141.12
 | Sending IP infrastructure | Turkey or EU expected | UK-hosted via DGTL TECH LLP, London (GB) | YES |
 
 **[Screenshot: WHOIS Output — Terminal Query: whois 94.141.120.32 (Full RIPE NCC Response)]**
-`![Whois output 1](screenshots/whois output 1.jpg)`
-`![Whois output 2](screenshots/whois output 2.jpg)`
+![Whois output 1](screenshots/whois output 1.jpg)
+![Whois output 2](screenshots/whois output 2.jpg)
 > Source: `screenshots/whois output 1` and `.../whois output 2`
 
 ```
@@ -243,11 +243,11 @@ source:         RIPE
 | Attachment Reference | "Please see technical specifications in the attached file" — direct instruction to open attachment |
 
 **[Screenshot: Email Body]**
-`![Email Body](screenshots/Email Body.jpg)`
+![Email Body](screenshots/Email Body.jpg)
 > Source: `screenshots/Email Body`
 
 **[Screenshot: MIME Part Listing — emldump.py Output]**
-`![List all mime parts](screenshots/list all mime parts.jpg)`
+![List all mime parts](screenshots/list all mime parts.jpg)
 > Source: `screenshots/list all mime parts`
 
 ```
@@ -259,7 +259,7 @@ source:         RIPE
 ```
 
 **[Screenshot: Extracted Email Body Content — Decoded Plain-text Body from emldump.py]**
-`![Extract and Read the Email Body](screenshots/Extract and Read the Email Body.jpg)`
+![Extract and Read the Email Body](screenshots/Extract and Read the Email Body.jpg)
 > Source: `screenshots/Extract and Read the Email Body`
 
 ```
@@ -302,8 +302,8 @@ The attachment passed through three layers of deception before the executable pa
 | 3 | Unknown binary | PE32 .NET assembly — AgentTesla delivery format | T1027 — Obfuscated Files or Information (packed .NET payload) |
 
 **[Screenshot: Raw Attachment Extraction — emldump.py (Attachment Saved from .eml File)]**
-`![Extract the Attachment a](screenshots/Extract the Attachmenta.jpg)`
-`![Extract the Attachment b](screenshots/Extract the Attachmentb.jpg)`
+![Extract the Attachment a](screenshots/Extract the Attachmenta.jpg)
+![Extract the Attachment b](screenshots/Extract the Attachmentb.jpg)
 > Source: `screenshots/Extract the Attachmenta` and `.../Extract the Attachmentb`
 
 ```
@@ -347,7 +347,7 @@ total 1.9M
 ```
 
 **[Screenshot: True File Type Detection — file Command Output]**
-`![Detect True File Type](screenshots/Detect True File Type.jpg)`
+![Detect True File Type](screenshots/Detect True File Type.jpg)
 > Source: `screenshots/Detect True File Type`
 
 ```
@@ -357,7 +357,7 @@ TECHNICAL_SPECIFICATIONS.tar: RAR archive data, v4, os: Win32
 ```
 
 **[Screenshot: RAR Archive Contents — unrar l Output]**
-`![List RAR Archive Contents](screenshots/List RAR Archive Contents.jpg)`
+![List RAR Archive Contents](screenshots/List RAR Archive Contents.jpg)
 > Source: `screenshots/List RAR Archive Contents`
 
 ```
@@ -399,7 +399,7 @@ Details: RAR 1.5
 | TECHNICAL SPECIFICATIONS.exe | SHA256 | d1b068b826e3a9527cddd09866886caba895f390af930a9b35c027eb1c2db34c |
 
 **[Screenshot: Hash Generation — md5sum / sha256sum Output for Both Files]**
-`![Extract EXE and Generate Hashes](screenshots/Extract EXE and Generate Hashes.jpg)`
+![Extract EXE and Generate Hashes](screenshots/Extract EXE and Generate Hashes.jpg)
 > Source: `screenshots/Extract EXE and Generate Hashes`
 
 ```
@@ -445,8 +445,8 @@ Static string analysis of the PE binary revealed the following credential-harves
 These strings are consistent with a credential harvesting component — either a fake login form overlay or a browser password vault extractor. Combined with the .NET assembly delivery method, this is consistent with the AgentTesla infostealer family.
 
 **[Screenshot: Static String Analysis — Malware Indicator Strings in PE Binary]**
-`![Malware Indicators](screenshots/Malware Indicators.jpg)`
-`![Malware Indicators 1a](screenshots/Malware Indicators1a.jpg)`
+![Malware Indicators](screenshots/Malware Indicators.jpg)
+![Malware Indicators 1a](screenshots/Malware Indicators1a.jpg)
 > Source: `screenshots/Malware Indicators` and `.../Malware Indicators1a`
 
 ```
@@ -489,12 +489,12 @@ ConvertHexStringToByteArray
 | TECHNICAL SPECIFICATIONS.exe | MALICIOUS: Trojan.msil/Strictor | Multiple vendors: confirmed infostealer payload |
 
 **[Screenshot: VirusTotal Analysis — SHA256 of RAR Container (Trojan/AgentTesla Detection)]**
-`![SHA256 Hash Analysis of TAR using Virus Total Trojan Agent Tesla](screenshots/SHA256 Hash Analysis of TAR using Virus Total Trojan Agent T....jpg)`
+![SHA256 Hash Analysis of TAR using Virus Total Trojan Agent Tesla](screenshots/SHA256 Hash Analysis of TAR using Virus Total Trojan Agent T....jpg)
 > Source: `screenshots/SHA256 Hash Analysis of TAR using Virus Total Trojan Agent T...`
 > VirusTotal: 49/63 security vendors flagged this file as malicious. Popular threat label: trojan.msil/agenttesla. Family labels: mail, agenttesla, krypt.
 
 **[Screenshot: VirusTotal Analysis — SHA256 of .exe Payload (Trojan.msil/Strictor Detection)]**
-`![SHA256 Hash Analysis on Virus Total on EXE file](screenshots/SHA256 Hash Analysis on Virus Total on EXE file.jpg)`
+![SHA256 Hash Analysis on Virus Total on EXE file](screenshots/SHA256 Hash Analysis on Virus Total on EXE file.jpg)
 > Source: `screenshots/SHA256 Hash Analysis on Virus Total on EXE file`
 > VirusTotal: 60/71 security vendors flagged this file as malicious. Popular threat label: trojan.msil/strictor. Family labels: msil, strictor, agenttesla.
 
