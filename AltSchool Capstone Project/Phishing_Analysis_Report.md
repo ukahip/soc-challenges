@@ -62,22 +62,16 @@ On 4 December 2024, a staff member at Globex Manufacturing Ltd. received a targe
 | DKIM | none | No digital signature — message integrity cannot be verified |
 | DMARC | none | No enforcement policy — spoofed mail from this domain passes uninspected |
 
-**[Screenshot: Sender display name decode]**
+**Screenshot:**
 ![Decode the Sender Display Name py](screenshots/Decode the Sender Display Name py.jpg)
 ![Decode the Sender Display Name](screenshots/Decode the Sender Display Name.jpg)
-> Source: `screenshots/Decode the Sender Display Name py` and `.../Decode the Sender Display Name`
-> Shows the RFC 2047 Base64 decode of the From display name to "Sertan ÇOKER".
 
-**[Screenshot: Email Overview in Sublime Text — Full Raw .eml Header Block]**
+**Screenshot:**
 ![Email Header](screenshots/email header.jpg)
-> Source: `screenshots/email header`
 
-
-**[Screenshot: Email Header Analysis — MX Toolbox (SPF/DKIM/DMARC/Relay Chain Results)]**
+**Screenshot:**
 ![Header analysis with mxtoolbox a](screenshots/heaader analysis with mxtoolboxa.jpg)
 ![Header analysis with mxtoolbox b](screenshots/heaader analysis with mxtoolboxb.jpg)
-> Source: `screenshots/heaader analysis with mxtoolboxa` and `...mxtoolboxb`
-
 
 ### 2.3 Originating IP Intelligence — WHOIS Analysis (94.141.120.32)
 
@@ -118,11 +112,9 @@ WHOIS data was retrieved from the RIPE NCC database for originating IP 94.141.12
 | Email timestamp Timezone | Turkish business hours expected (UTC+3) | US Pacific time (-0800 / UTC-8) | YES |
 | Sending IP infrastructure | Turkey or EU expected | UK-hosted via DGTL TECH LLP, London (GB) | YES |
 
-**[Screenshot: WHOIS Output — Terminal Query: whois 94.141.120.32 (Full RIPE NCC Response)]**
-![Whois output 1](screenshots/whois output 1.jpg)
-![Whois output 2](screenshots/whois output 2.jpg)
-> Source: `screenshots/whois output 1` and `.../whois output 2`
-
+**Screenshot:**
+![whois output 1](<screenshots/whois output 1.jpg>)
+![whois output 2](screenshots/whois output 2.jpg)
 
 ### 2.4 Email Content Analysis
 
@@ -133,19 +125,14 @@ WHOIS data was retrieved from the RIPE NCC database for originating IP 94.141.12
 | Embedded URLs | None — entirely attachment-based; bypasses URL reputation scanning and safe-link rewriting |
 | Attachment Reference | "Please see technical specifications in the attached file" — direct instruction to open attachment |
 
-**[Screenshot: Email Body]**
-![Email Body](screenshots/Email Body.jpg)
-> Source: `screenshots/Email Body`
+**Screenshot:**
+![Email Body](<screenshots/Email Body.jpg>)
 
-**[Screenshot: MIME Part Listing — emldump.py Output]**
-![List all mime parts](screenshots/list all mime parts.jpg)
-> Source: `screenshots/list all mime parts`
+**Screenshot:**
+![List all mime parts](<screenshots/list all mime parts.jpg>)
 
-
-**[Screenshot: Extracted Email Body Content — Decoded Plain-text Body from emldump.py]**
-![Extract and Read the Email Body](screenshots/Extract and Read the Email Body.jpg)
-> Source: `screenshots/Extract and Read the Email Body`
-
+**Screenshot:**
+![Extract and Read the Email Body](<screenshots/Extract and Read the Email Body.jpg>)
 
 ### 2.5 Social Engineering Assessment
 
@@ -173,20 +160,19 @@ The attachment passed through three layers of deception before the executable pa
 | 2 | A document or specification file inside the archive | TECHNICAL SPECIFICATIONS.exe (Windows executable) | Extension confusion — spaces before .exe; Windows hides .exe by default |
 | 3 | Unknown binary | PE32 .NET assembly — AgentTesla delivery format | T1027 — Obfuscated Files or Information (packed .NET payload) |
 
-**[Screenshot: Raw Attachment Extraction — emldump.py (Attachment Saved from .eml File)]**
-![Extract the Attachment a](screenshots/Extract the Attachmenta.jpg)
-![Extract the Attachment b](screenshots/Extract the Attachmentb.jpg)
-> Source: `screenshots/Extract the Attachmenta` and `.../Extract the Attachmentb`
+**Screenshot:**
 
-**[Screenshot: True File Type Detection — file Command Output]**
-![Detect True File Type](screenshots/Detect True File Type.jpg)
-> Source: `screenshots/Detect True File Type`
+![Extract the Attachment a](<screenshots/Extract the Attachmenta.jpg>)
 
 
-**[Screenshot: RAR Archive Contents — unrar l Output]**
-![List RAR Archive Contents](screenshots/List RAR Archive Contents.jpg)
-> Source: `screenshots/List RAR Archive Contents`
+![Extract the Attachment b](<screenshots/Extract the Attachmentb.jpg>)
 
+**Screenshot:**
+
+![Detect True File Type](<screenshots/Detect True File Type.jpg>)
+
+**Screenshot:**
+![List RAR Archive Contents](<screenshots/List RAR Archive Contents.jpg>)
 
 ### 3.2 File Properties
 
@@ -210,10 +196,8 @@ The attachment passed through three layers of deception before the executable pa
 | TECHNICAL SPECIFICATIONS.exe | MD5 | 65feefe926eb3f734b6968b35c23acb3 |
 | TECHNICAL SPECIFICATIONS.exe | SHA256 | d1b068b826e3a9527cddd09866886caba895f390af930a9b35c027eb1c2db34c |
 
-**[Screenshot: Hash Generation — md5sum / sha256sum Output for Both Files]**
-![Extract EXE and Generate Hashes](screenshots/Extract EXE and Generate Hashes.jpg)
-> Source: `screenshots/Extract EXE and Generate Hashes`
-
+**Screenshot:**
+![Extract EXE and Generate Hashes](<screenshots/Extract EXE and Generate Hashes.jpg>)
 
 ### 3.4 Malware Indicators (Static String Analysis: No Execution)
 
@@ -228,11 +212,11 @@ Static string analysis of the PE binary revealed the following credential-harves
 
 These strings are consistent with a credential harvesting component — either a fake login form overlay or a browser password vault extractor. Combined with the .NET assembly delivery method, this is consistent with the AgentTesla infostealer family.
 
-**[Screenshot: Static String Analysis — Malware Indicator Strings in PE Binary]**
-![Malware Indicators](screenshots/Malware Indicators.jpg)
-![Malware Indicators 1a](screenshots/Malware Indicators1a.jpg)
-> Source: `screenshots/Malware Indicators` and `.../Malware Indicators1a`
+**Screenshot:**
 
+![Malware Indicators](<screenshots/Malware Indicators.jpg>)
+
+![Malware Indicators 1a](<screenshots/Malware Indicators1a.jpg>)
 
 ### 3.5 VirusTotal Hash Reputation Analysis
 
@@ -241,15 +225,12 @@ These strings are consistent with a credential harvesting component — either a
 | TECHNICAL_SPECIFICATIONS.tar (RAR container) | MALICIOUS: Trojan/AgentTesla | Antiy-AVL: Trojan/Win32.AgentTesla (Keylogger) |
 | TECHNICAL SPECIFICATIONS.exe | MALICIOUS: Trojan.msil/Strictor | Multiple vendors: confirmed infostealer payload |
 
-**[Screenshot: VirusTotal Analysis — SHA256 of RAR Container (Trojan/AgentTesla Detection)]**
-![SHA256 Hash Analysis of TAR using Virus Total Trojan Agent Tesla](screenshots/SHA256 Hash Analysis of TAR using Virus Total Trojan Agent T....jpg)
-> Source: `screenshots/SHA256 Hash Analysis of TAR using Virus Total Trojan Agent T...`
-> VirusTotal: 49/63 security vendors flagged this file as malicious. Popular threat label: trojan.msil/agenttesla. Family labels: mail, agenttesla, krypt.
+**Screenshot:**
 
-**[Screenshot: VirusTotal Analysis — SHA256 of .exe Payload (Trojan.msil/Strictor Detection)]**
-![SHA256 Hash Analysis on Virus Total on EXE file](screenshots/SHA256 Hash Analysis on Virus Total on EXE file.jpg)
-> Source: `screenshots/SHA256 Hash Analysis on Virus Total on EXE file`
-> VirusTotal: 60/71 security vendors flagged this file as malicious. Popular threat label: trojan.msil/strictor. Family labels: msil, strictor, agenttesla.
+![SHA256 Hash Analysis of TAR using Virus Total Trojan Agent Tesla](<screenshots/SHA256 Hash Analysis of TAR using Virus Total Trojan Agent Tesla.jpg>)
+
+**Screenshot:**
+![SHA256 Hash Analysis on Virus Total on EXE file](<screenshots/SHA256 Hash Analysis on Virus Total on EXE file.jpg>)
 
 ---
 
@@ -359,7 +340,7 @@ The threat actor conducted a targeted malspam campaign against Globex Manufactur
 
 ---
 
-## Screenshot Index (shared `screenshots/` folder)
+## Screenshot Index
 
 | Screenshot filename in folder | Used in section |
 |---|---|
@@ -384,4 +365,4 @@ The threat actor conducted a targeted malspam campaign against Globex Manufactur
 | whois output 1 | 2.3 — WHOIS Output |
 | whois output 2 | 2.3 — WHOIS Output |
 
-> **Note:** Replace the placeholder image links above with the actual exported screenshot image files, placing them in the same folder as this markdown file (or update the paths to point to your screenshot folders directly).
+

@@ -31,10 +31,8 @@ The PCAP capture spans 182 frames (53,464 bytes). FTP dominates — 42 control f
 | FTP Control | 42 | 4,354 | 2 complete sessions on port 21 — cleartext credentials |
 | FTP Data | 27 | 38,747 | 4 files exfiltrated — ~38 KB of stolen data |
 
-**[Screenshot: Protocol Hierarchy Overview]**
-![Protocol Hierarchy Overview](screenshots/Protocol Hierarchy Overview.jpg)
-> Source: `screenshots/Protocol Hierarchy Overview`
-
+**Screenshot:**
+![Protocol Hierarchy Overview](<screenshots/Protocol Hierarchy Overview.jpg>)
 
 ### IP Conversation Analysis
 
@@ -45,10 +43,8 @@ The PCAP capture spans 182 frames (53,464 bytes). FTP dominates — 42 control f
 | 10.12.4.1 | Internal DNS / Gateway | 6 | Responds to DNS queries only — no suspicious behaviour |
 | 172.67.74.152 | api.ipify.org (Cloudflare) | 19 | Victim public IP lookup — HTTPS; first contact post-execution |
 
-**[Screenshot: IP Conversation Results]**
-![IP Conversation Results](screenshots/Identify All Hosts \(IP Conversation Table\).jpg)
-> Source: `screenshots/Identify All Hosts (IP Conversation Table)`
-
+**Screenshot:**
+![IP Conversation Results](<screenshots/Identify All Hosts (IP Conversation Table).jpg>)
 
 ### Confirmed Victim Profile
 
@@ -86,10 +82,8 @@ The PCAP capture spans 182 frames (53,464 bytes). FTP dominates — 42 control f
 | T+6.122s | 10.12.4.101 | ftp.ercolina-usa.com | FTP exfil server — Session 1 about to open |
 | T+1211.313s | 10.12.4.101 | ftp.ercolina-usa.com | FTP re-resolution — Session 2 beacon (~20 min interval) |
 
-**[Screenshot: DNS Query Extraction]**
-![DNS Query Extraction](screenshots/Extract DNS Queries.jpg)
-> Source: `screenshots/Extract DNS Queries`
-
+**Screenshot:**
+![DNS Query Extraction](<screenshots/Extract DNS Queries.jpg>)
 
 ### DNS Response Analysis: Resolved IPs
 
@@ -98,10 +92,8 @@ The PCAP capture spans 182 frames (53,464 bytes). FTP dominates — 42 control f
 | api.ipify.org | 172.67.74.152 / 104.26.12.205 / 104.26.13.205 | Legitimate public IP service — abused by AgentTesla to profile network location pre-exfiltration |
 | **ftp.ercolina-usa.com** | **192.254.225.136** | **Attacker-controlled FTP server — receives all stolen data** |
 
-**[Screenshot: DNS Response Extraction]**
-![DNS Response Extraction](screenshots/Extract DNS Responses \(Domain → IP Resolution\).jpg)
-> Source: `screenshots/Extract DNS Responses (Domain → IP Resolution)`
-
+**Screenshot:**
+![DNS Response Extraction](<screenshots/Extract DNS Responses (Domain → IP Resolution).jpg>)
 
 ### DNS Analyst Summary
 
@@ -152,10 +144,8 @@ FTP runs entirely in cleartext. The following control channel exchange was recon
 | T+8.824s | Server → Client | 226 File successfully transferred | Edge data confirmed; Session 1 closing |
 | T+9.1s | Client → Server | QUIT | FTP Session 1 closed cleanly |
 
-**[Screenshot: FTP Session 1 — Full Command Reconstruction]**
-![Reconstruct Full FTP Session 1](screenshots/Reconstruct Full FTP Session 1.jpg)
-> Source: `screenshots/Reconstruct Full FTP Session 1`
-
+**Screenshot:**
+![Reconstruct Full FTP Session 1](<screenshots/Reconstruct Full FTP Session 1.jpg>)
 
 ### Session 2 — Keylog Upload (T+1,211s — ~20 min later)
 
@@ -170,12 +160,10 @@ Twenty minutes after Session 1, AgentTesla opened a second FTP session to upload
 | T+1212.249s | Client → Server | STOR KL_gary.strickman-DESKTOP-VJCRXEB_2024_12_04_21_41_04.html | ⚠ Keylog uploaded — ~1.4 KB of captured keystrokes |
 | T+1212.425s | Server → Client | 226 File successfully transferred | Keylog confirmed on attacker server — Session 2 complete |
 
-**[Screenshot: FTP Session 2 — Keylog Upload]**
-![Reconstruct Full FTP Session 2](screenshots/Reconstruct Full FTP Session 2.jpg)
-> Source: `screenshots/Reconstruct Full FTP Session 2`
-> (See also combined view below: `Reconstruct Full FTP Sessions full session`)
+**Screenshot:**
+![Reconstruct Full FTP Session 2](<screenshots/Reconstruct Full FTP Session 2.jpg>)
 
-![Reconstruct Full FTP Sessions full session](screenshots/Reconstruct Full FTP Sessions full session.jpg)
+![Reconstruct Full FTP Sessions full session](<screenshots/Reconstruct Full FTP Sessions full session.jpg>)
 
 ### Exfiltrated Files: All 4 Recovered from PCAP
 
@@ -186,11 +174,10 @@ Twenty minutes after Session 1, AgentTesla opened a second FTP session to upload
 | CO_ | CO_Edge Chromium_Default.txt_gary.strickman-DESKTOP-VJCRXEB_2024_12_04_21_21_04.txt | ~11 KB | Edge Chromium credentials and cookie store |
 | KL_ | KL_gary.strickman-DESKTOP-VJCRXEB_2024_12_04_21_41_04.html | ~1.4 KB | 20 minutes of captured keystrokes — HTML format |
 
-**[Screenshot: Exfiltrated File Recovery]**
-![Recover Exfiltrated Files from PCAP 1a](screenshots/Recover Exfiltrated Files from PCAP 1a.jpg)
-![Recover Exfiltrated Files from PCAP 1b](screenshots/Recover Exfiltrated Files from PCAP 1b.jpg)
-> Source: `screenshots/Recover Exfiltrated Files from PCAP 1a` and `...1b`
-> Also relevant: `screenshots/exfiltrated files from PCAP`
+**Screenshot:**
+![Recover Exfiltrated Files from PCAP 1a](<screenshots/Recover Exfiltrated Files from PCAP 1a.jpg>)
+
+![Recover Exfiltrated Files from PCAP 1b](<screenshots/Recover Exfiltrated Files from PCAP 1b.jpg>)
 
 ![Exfiltrated files from PCAP](screenshots/exfiltrated files from PCAP.jpg)
 
@@ -310,7 +297,7 @@ Twenty minutes after Session 1, AgentTesla opened a second FTP session to upload
 
 ---
 
-## Screenshot Index (shared `screenshots/` folder)
+## Screenshot Index
 
 | Screenshot filename in folder | Used in section |
 |---|---|
@@ -325,4 +312,4 @@ Twenty minutes after Session 1, AgentTesla opened a second FTP session to upload
 | Recover Exfiltrated Files from PCAP 1a | 03 — Exfiltrated File Recovery |
 | Recover Exfiltrated Files from PCAP 1b | 03 — Exfiltrated File Recovery |
 
-> **Note:** Replace the placeholder image links above (e.g. `screenshots/Protocol Hierarchy Overview.jpg`) with the actual exported screenshot files once copied into the same directory as this markdown file, keeping filenames consistent or updating the links to match.
+

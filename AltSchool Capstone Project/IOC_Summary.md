@@ -159,5 +159,3 @@ Full kill chain coverage: Initial Access → Execution → Defense Evasion → D
 ---
 
 *Ukah Paul · Incident Date: 04 December 2024 · TLP:RED*
-
-> **Note on screenshots:** This IOC summary is a consolidated data table and does not itself reference embedded screenshots. For supporting visual evidence (WHOIS output, VirusTotal results, hash generation, etc.), see the screenshot placeholders in `Phishing_Analysis_Report.md` and `SOC_Network_Investigation_Report.md`, which map directly to the files in your `Phase 1 Screenshots- Phishing Email` and `Phase 2 Screenshots-Network Investigation` folders.
